@@ -1,16 +1,62 @@
 ---
+import TeamCard from '../components/TeamCard.astro';
 
+const team = [
+  {
+    name: 'Elle Woods',
+    role: 'Commercial Lawyer',
+    image: '/images/1.jpg',
+    socialLinks: {
+      facebook: 'https://facebook.com',
+      twitter: 'https://twitter.com/ellewoods',
+      instagram: 'https://instagram.com/ellewoods',
+      linkedin: 'https://linkedin.com/in/ellewoods',
+    },
+  },
+  {
+    name: 'Emmett Richmond',
+    role: 'IP Lawyer',
+    image: '/images/2.jpg',
+    socialLinks: {
+      facebook: 'https://facebook.com',
+      twitter: 'https://twitter.com/emmettrichmond',
+      instagram: 'https://instagram.com/emmettrichmond',
+      linkedin: 'https://linkedin.com/in/emmettrichmond',
+    },
+  },
+  {
+    name: 'Vivian Kensington',
+    role: 'Family Lawyer',
+    image: '/images/3.jpg',
+    socialLinks: {
+      facebook: 'https://facebook.com',
+      twitter: 'https://twitter.com/viviankensington',
+      instagram: 'https://instagram.com/viviankensington',
+      linkedin: 'https://linkedin.com/in/viviankensington',
+    },
+  },
+  {
+    name: 'Warner Huntington III',
+    role: 'Lawyer',
+    image: '/images/4.jpg',
+    socialLinks: {
+      facebook: 'https://facebook.com',
+      twitter: 'https://twitter.com/warnerhuntington',
+      instagram: 'https://instagram.com/warnerhuntington',
+      linkedin: 'https://linkedin.com/in/warnerhuntington',
+    },
+  },
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<section class="text-center py-12 px-4 md:px-8 lg:px-16">
+	<h2 class="text-sm font-semibold text-green-600" style="font-family: 'Georgia', serif;">TEAM</h2>
+	<h1 class="text-6xl font-bold mb-10 mt-6" style="font-family: 'Georgia', serif;">Our Team</h1>
+	
+	<!-- Grid layout -->
+	<div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 max-w-7xl mx-auto">
+	  {team.map(member => (
+		<TeamCard {...member} />
+	  ))}
+	</div>
+  </section>
